@@ -151,39 +151,9 @@ the config file like this:
     heart-path = /containerdns/monitor/heart
     lock-path = /containerdns/monitor/lock
 ```
-### containerdns-apicmd
-
-* `addr`: containerdns api address,such as 127.0.0.1:9001 or form env(SKYDNS_API_ADDR).
-* `domain`: the domain to show
-* `show`: show one domain
-* `list`: show all domains
 
 ## Testing
 
-### containerdns-apicmd
-```shell
-    export SKYDNS_API_ADDR=127.0.0.1:9001
-    export SKYDNS_API_TOKEN=123456789
-    
-    containerdns-apicmd -list    
-    domain:                      qiyf-nginx-5.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.113] }
-    domain:                      qiyf-nginx-9.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.120] }
-    domain:                      qiyf-nginx-4.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.114] }
-    domain:                      qiyf-nginx-6.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.116] }
-    domain:                     qiyf-nginx-14.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.125] }
-    domain:                     qiyf-nginx-27.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.147] }
-    domain:                     qiyf-nginx-15.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.126] }
-    domain:                     qiyf-nginx-19.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.13] }
-    domain:                     qiyf-nginx-30.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.148] }
-    domain:                      qiyf-nginx-1.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.115] }
-    domain:                     qiyf-nginx-10.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.121] }
-    domain:                     qiyf-nginx-25.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.146] }
-
-    
-    containerdns-apicmd -show qiyf-nginx-5.default
-    domain:                      qiyf-nginx-5.default.svc.containerdns.local       val: { type:A  ips:[192.168.19.113] }
-    
-```
 ### containerdns-kubeapi
 ```
     we use curl to test the user api.
