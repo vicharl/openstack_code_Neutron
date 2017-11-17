@@ -28,7 +28,7 @@ then the user access the domain later, the user will get the same service ip.
 Then get and compile ContainerDNS:
 
 ```shell
-    git clone https://github.com/tigcode/containerdns
+    git clone https://github.com/tigcode/containerdns
     cd $GOPATH/src/github.com/tigcode/containerdns
     make
 ```
@@ -101,7 +101,7 @@ the config file like this:
 
 the config file like this:
 
-```
+```shell
     [General]
     core = 0
     enable-check = true
@@ -133,7 +133,7 @@ the config file like this:
 
 the config file like this:
 
-```
+```shell
     [General]
     schedule-interval = 60
     agent-downtime = 60
@@ -159,7 +159,7 @@ the config file like this:
 ## Testing
 
 ### containerdns-apicmd
-```
+```shell
     export SKYDNS_API_ADDR=127.0.0.1:9001
     export SKYDNS_API_TOKEN=123456789
     
@@ -187,12 +187,12 @@ the config file like this:
     we use curl to test the user api.
 ```
 ####  typeA
-```
+```shell
     % curl -H "Content-Type:application/json;charset=UTF-8"  -X POST -d '{"type":"A","ips":["192.168.10.1","192.168.10.2","192.168.10.3"]}'  http://127.0.0.1:9001/containerdns/api/cctv2?token="123456789"      
     OK
 ```
 #### typeCname
-```
+```shell
     % curl -H "Content-Type:application/json;charset=UTF-8"   -X POST -d '{"type":"cname","alias":"tv1"}' http://127.0.0.1:9001/containerdns/api/cctv2.containerdns.local?token="123456789"  
    OK
 ```
@@ -200,7 +200,7 @@ the config file like this:
 ### containerdns
 
 ####  typeA
-```
+```shell
     % nslookup qiyf-nginx-5.default.svc.containerdns.local 127.0.0.1
     Server:         127.0.0.1
     Address:        127.0.0.1#53
@@ -219,7 +219,7 @@ the config file like this:
 
 ```
 ####  typeCname
-```
+```shell
     % nslookup tv1.containerdns.local 127.0.0.1
     Server:         127.0.0.1
     Address:        127.0.0.1#53
@@ -229,7 +229,7 @@ the config file like this:
     Address: 192.168.10.3
 ```
 ####  monitor
-```
+```shell
      If the domain may have multiple ips, then dns-scanner is used to monitor the ips behand the domain. 
      When the service is not reachable, dns-scanner will change the status of the ip. And the containerdns will monitor the ip status, 
      when it comes down, containerdns will choose a good one.
@@ -260,7 +260,7 @@ the config file like this:
 
 ### Testing Conditions
 #### Physical hardware
-```
+```shell
     NIC: gigabit ethernet card
     CPUs: 32
     RAM: 32G
