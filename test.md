@@ -27,7 +27,7 @@ then the user access the domain later, the user will get the same service ip.
 
 Then get and compile ContainerDNS:
 
-```
+```bash
     git clone https://github.com/tigcode/containerdns
     cd $GOPATH/src/github.com/tigcode/containerdns
     make
@@ -40,7 +40,7 @@ Then get and compile ContainerDNS:
 
 the config file like this:
 
-```
+```bash
     [Dns]
     dns-domain = containerdns.local.
     dns-addr   = 0.0.0.0:53
@@ -75,7 +75,7 @@ the config file like this:
 
 the config file like this:
 
-```
+```bash
     [General]
     domain=containerdns.local
     host = 192.168.169.41
