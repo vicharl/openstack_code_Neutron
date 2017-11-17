@@ -15,7 +15,7 @@ then the user access the domain later, the user will get the same service ip.
    original data for containerdns, meanwhille containerdns-kubeapi offers the RESTful api for users to maintain domain records.
 * `containerdns-apicmd`: it is a shell cmd for user to query\update domain record, it is based on containerdns-kubeapi.
 
-## feature：
+## Feature：
 * a full cached DNS records
 * backend ip automatic removed when it not avaliable
 * support multiple domain suffix 
@@ -28,6 +28,8 @@ then the user access the domain later, the user will get the same service ip.
 Then get and compile ContainerDNS:
 
 ```shell
+    mkdir -p $GOPATH/src/github.com/tigcode
+    cd $GOPATH/src/github.com/tigcode
     git clone https://github.com/tigcode/containerdns
     cd $GOPATH/src/github.com/tigcode/containerdns
     make
@@ -200,7 +202,7 @@ the config file like this:
 ### containerdns
 
 ####  typeA
-```shell
+```
     % nslookup qiyf-nginx-5.default.svc.containerdns.local 127.0.0.1
     Server:         127.0.0.1
     Address:        127.0.0.1#53
@@ -219,7 +221,7 @@ the config file like this:
 
 ```
 ####  typeCname
-```shell
+```
     % nslookup tv1.containerdns.local 127.0.0.1
     Server:         127.0.0.1
     Address:        127.0.0.1#53
@@ -229,7 +231,7 @@ the config file like this:
     Address: 192.168.10.3
 ```
 ####  monitor
-```shell
+```
      If the domain may have multiple ips, then dns-scanner is used to monitor the ips behand the domain. 
      When the service is not reachable, dns-scanner will change the status of the ip. And the containerdns will monitor the ip status, 
      when it comes down, containerdns will choose a good one.
@@ -260,7 +262,7 @@ the config file like this:
 
 ### Testing Conditions
 #### Physical hardware
-```shell
+```
     NIC: gigabit ethernet card
     CPUs: 32
     RAM: 32G
